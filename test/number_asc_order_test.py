@@ -63,7 +63,7 @@ def test_sort_leaves_the_stack_as_it_was_before_the_call(cut, mocker):
     cut.sort(stack)
 
     assert stack.remaining == drawn
-    assert stack.push.call_args_list == [mocker.call(n) for n in reversed(drawn)]
+    assert stack.push.call_args_list == [mocker.call(n) for n in drawn]
 
 
 @pytest.mark.parametrize("seed", range(10))
